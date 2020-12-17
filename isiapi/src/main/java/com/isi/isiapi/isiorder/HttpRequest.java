@@ -256,7 +256,9 @@ public class HttpRequest {
         json.addData("table_name", tableName);
         json.addData("upload", upload);
 
-        MakeHttpPost post = new MakeHttpPost("activateChat", json.getData(), apiKey);
+        Log.e("TAG", "insertAllDao: " + json.getData());
+
+        MakeHttpPost post = new MakeHttpPost("insertAllDao", json.getData(), apiKey);
 
         try {
             String response = post.execute().get();

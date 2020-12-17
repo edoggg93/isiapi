@@ -56,8 +56,6 @@ public class MakeHttpPost extends AsyncTask<Void, Void, String> {
 
             int statusCode = urlConnection.getResponseCode();
 
-            Log.e("", "statusCodeResponse: " + statusCode);
-
             if(statusCode == 200){
                 InputStream inputStream = urlConnection.getInputStream();
                 StringBuilder buffer = new StringBuilder();
