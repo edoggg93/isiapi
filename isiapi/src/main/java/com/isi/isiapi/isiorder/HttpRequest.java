@@ -34,8 +34,6 @@ public class HttpRequest {
         try {
             String response = post.execute().get();
 
-            Log.e("TAG", "getSerial: " + response);
-
             return new Gson().fromJson(response, SerialList.class);
 
         } catch (ExecutionException | InterruptedException e) {
@@ -55,6 +53,8 @@ public class HttpRequest {
 
         try {
             String response = post.execute().get();
+
+            Log.e("TAG", "getInformation: " + response);
 
             return new Gson().fromJson(response, Commercial.class);
 

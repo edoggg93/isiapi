@@ -13,16 +13,5 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-
-                HttpRequest request = new HttpRequest(Build.USER, "a6b602d858ae0da189dacd297");
-
-                request.getSerial(Build.SERIAL);
-
-            }
-        }).start();
     }
 }
