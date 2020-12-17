@@ -155,7 +155,7 @@ public class HttpRequest {
                     returned.put(PaymentError.PAYMENT_ERROR.DEACTIVATION_SUCCESS, 0);
                     break;
                 default:
-                    returned.put(PaymentError.PAYMENT_ERROR.OK, Integer.parseInt(response.split(":")[1]));
+                    returned.put(PaymentError.PAYMENT_ERROR.OK, Integer.parseInt(response.trim().split(":")[1]));
                     break;
             }
 
@@ -193,7 +193,7 @@ public class HttpRequest {
                     returned.put(PaymentError.PAYMENT_ERROR.DEACTIVATION_SUCCESS, 0);
                     break;
                 default:
-                    returned.put(PaymentError.PAYMENT_ERROR.OK, Integer.parseInt(response.split(":")[1]));
+                    returned.put(PaymentError.PAYMENT_ERROR.OK, Integer.parseInt(response.trim().split(":")[1]));
                     break;
             }
 
@@ -231,7 +231,7 @@ public class HttpRequest {
                     returned.put(PaymentError.PAYMENT_ERROR.DEACTIVATION_SUCCESS, 0);
                     break;
                 default:
-                    returned.put(PaymentError.PAYMENT_ERROR.OK, Integer.parseInt(response.split(":")[1]));
+                    returned.put(PaymentError.PAYMENT_ERROR.OK, Integer.parseInt(response.trim().split(":")[1]));
                     break;
             }
 
