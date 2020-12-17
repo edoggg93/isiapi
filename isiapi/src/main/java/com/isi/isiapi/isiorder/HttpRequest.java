@@ -4,12 +4,9 @@ import android.annotation.SuppressLint;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
-import com.isi.isiapilibrary.API.general.HttpJson;
-import com.isi.isiapilibrary.API.general.classes.Commercial;
-import com.isi.isiapilibrary.API.general.classes.SerialList;
-import com.isi.isiapilibrary.API.isiorder.MakeHttpPost;
-import com.isi.isiapilibrary.API.isiorder.PaymentError;
-
+import com.isi.isiapi.general.HttpJson;
+import com.isi.isiapi.general.classes.Commercial;
+import com.isi.isiapi.general.classes.SerialList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;

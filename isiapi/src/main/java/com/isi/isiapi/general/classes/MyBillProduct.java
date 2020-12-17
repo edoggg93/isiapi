@@ -1,7 +1,6 @@
 package com.isi.isiapi.general.classes;
 
 import com.google.gson.annotations.SerializedName;
-import com.isi.isicashierlibrary.product.product.BillProduct;
 
 public class MyBillProduct extends BillProduct{
 
