@@ -286,6 +286,58 @@ public class HttpRequest {
 
     }
 
+    public String getCategoryPic(){
+        HttpJson json = new HttpJson();
+        json.addData("", "");
+
+        MakeHttpPost post = new MakeHttpPost("categoryPics", json.getData(), apiKey);
+
+        try {
+
+            return post.execute().get();
+
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return "";
+    }
+
+    public String getProductPic(){
+        HttpJson json = new HttpJson();
+        json.addData("", "");
+
+        MakeHttpPost post = new MakeHttpPost("productPics", json.getData(), apiKey);
+
+        try {
+
+            return post.execute().get();
+
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return "";
+    }
+
+    public void sendMail(String message, String to){
+        HttpJson json = new HttpJson();
+        json.addData("message", message);
+        json.addData("to", to);
+
+
+        MakeHttpPost post = new MakeHttpPost("sendMail", json.getData(), apiKey);
+
+        try {
+
+            post.execute().get();
+
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 
 }
 
