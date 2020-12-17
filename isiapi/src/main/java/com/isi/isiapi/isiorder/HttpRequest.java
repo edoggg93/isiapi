@@ -1,6 +1,4 @@
 package com.isi.isiapi.isiorder;
-
-import android.annotation.SuppressLint;
 import android.util.Log;
 
 import com.google.gson.Gson;
@@ -18,8 +16,13 @@ public class HttpRequest {
 
     private MakeHttpPost postRequest;
 
-    @SuppressLint("HardwareIds")
+    @Deprecated
     public HttpRequest(String serial, String apiKey) {
+        this.apiKey = apiKey;
+    }
+
+
+    public HttpRequest(String apiKey) {
         this.apiKey = apiKey;
     }
 
@@ -84,7 +87,7 @@ public class HttpRequest {
             }else if(response.trim().equals("notEnoughMoney")){
                 returned.put(PaymentError.PAYMENT_ERROR.NOT_ENOUGHT_MONEY, 0);
             }else{
-                returned.put(PaymentError.PAYMENT_ERROR.OK, Integer.parseInt(response.split(":")[1]));
+                returned.put(PaymentError.PAYMENT_ERROR.OK, Integer.parseInt(response.trim().split(":")[1]));
             }
 
             return returned;
@@ -118,7 +121,7 @@ public class HttpRequest {
             }else if(response.trim().equals("notEnoughMoney")){
                 returned.put(PaymentError.PAYMENT_ERROR.NOT_ENOUGHT_MONEY, 0);
             }else{
-                returned.put(PaymentError.PAYMENT_ERROR.OK, Integer.parseInt(response.split(":")[1]));
+                returned.put(PaymentError.PAYMENT_ERROR.OK, Integer.parseInt(response.trim().split(":")[1]));
             }
 
             return returned;
