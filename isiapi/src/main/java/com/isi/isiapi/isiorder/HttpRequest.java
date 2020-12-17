@@ -1,6 +1,7 @@
 package com.isi.isiapi.isiorder;
 
 import android.annotation.SuppressLint;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -32,6 +33,8 @@ public class HttpRequest {
 
         try {
             String response = post.execute().get();
+
+            Log.e("TAG", "getSerial: " + response);
 
             return new Gson().fromJson(response, SerialList.class);
 
