@@ -1,5 +1,4 @@
 package com.isi.isiapi.isiorder;
-import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -56,8 +55,6 @@ public class HttpRequest {
 
         try {
             String response = post.execute().get();
-
-            Log.e("TAG", "getInformation: " + response);
 
             return new Gson().fromJson(response, Commercial.class);
 
@@ -255,8 +252,6 @@ public class HttpRequest {
         json.addData("allDao", allDao);
         json.addData("table_name", tableName);
         json.addData("upload", upload);
-
-        Log.e("TAG", "insertAllDao: " + json.getData());
 
         MakeHttpPost post = new MakeHttpPost("insertAllDao", json.getData(), apiKey);
 
