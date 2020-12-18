@@ -4,34 +4,34 @@ import com.google.gson.annotations.SerializedName;
 
 public class MagaProduct {
 
-    @SerializedName("id")
+    @SerializedName("Id")
     public int id;
 
-    @SerializedName("name")
+    @SerializedName("Name")
     public String name;
 
-    @SerializedName("barcode_value")
+    @SerializedName("BarcodeValue")
     public String barcode_value;
 
-    @SerializedName("storage_categories_id")
+    @SerializedName("StorageCategoriesId")
     public String storage_categories_id;
 
-    @SerializedName("unity_id")
+    @SerializedName("UnityId")
     public String unity_id;
 
-    @SerializedName("price")
+    @SerializedName("Price")
     public float price;
 
-    @SerializedName("quantity")
+    @SerializedName("Quantity")
     public float quantity;
 
-    @SerializedName("blister_pieces")
+    @SerializedName("BlisterPieces")
     public int blister_pieces;
 
-    @SerializedName("forniture_id")
+    @SerializedName("FornitureId")
     public Integer forniture_id;
 
-    @SerializedName("commercial_local_id")
+    @SerializedName("CommercialLocalId")
     private String commercial_local_id;
 
     public MagaProduct(String name, String barcode_value, String storage_categories_id, String unity_id, float price, float quantity, Integer forniture_id, int blister_pieces) {
