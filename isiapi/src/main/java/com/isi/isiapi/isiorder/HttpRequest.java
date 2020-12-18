@@ -355,15 +355,48 @@ public class HttpRequest {
 
         try{
             String result = post.execute().get();
-
-            Log.e("TAG", "getOrderGuest: " + result);
-
             return new Gson().fromJson(result, new TypeToken<ArrayList<OrderGuest>>(){}.getType());
 
         }catch (Exception e){e.printStackTrace();}
 
         return null;
 
+
+    }
+
+    public boolean approveOrderGuest(int id){
+
+        HttpJson json = new HttpJson();
+        json.addData("id", id);
+
+
+        MakeHttpPost post = new MakeHttpPost("approveOrderGuest", json.getData(), apiKey);
+
+        try{
+            String result = post.execute().get();
+            return result.trim().equals("ok");
+
+        }catch (Exception e){e.printStackTrace();}
+
+        return false;
+
+    }
+
+    public boolean cancelorderGuest(int id){
+
+        HttpJson json = new HttpJson();
+        json.addData("id", id);
+
+
+        MakeHttpPost post = new MakeHttpPost("cancelOrderGuest", json.getData(), apiKey);
+
+        try{
+            String result = post.execute().get();
+            return result.trim().equals("ok");
+
+        }catch (Exception e){e.printStackTrace();}
+
+        return false;
 
     }
 
