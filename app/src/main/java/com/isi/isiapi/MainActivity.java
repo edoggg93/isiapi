@@ -4,8 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 
-import com.isi.isiapi.isimaga.HttpRequest;
+import com.isi.isiapi.general.classes.OrderGuest;
+import com.isi.isiapi.isiorder.HttpRequest;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +20,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        new HttpRequest(apiKey).getProducts(Build.SERIAL);
     }
 }

@@ -1,10 +1,16 @@
 package com.isi.isiapi.isiorder;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.reflect.TypeToken;
 import com.isi.isiapi.general.HttpJson;
 import com.isi.isiapi.general.classes.Commercial;
+import com.isi.isiapi.general.classes.OrderGuest;
 import com.isi.isiapi.general.classes.SerialList;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
@@ -336,6 +342,28 @@ public class HttpRequest {
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
+
+    }
+
+    public ArrayList<OrderGuest> getOrderGuest(String serial){
+
+        HttpJson json = new HttpJson();
+        json.addData("serial", serial);
+
+
+        MakeHttpPost post = new MakeHttpPost("getOrderGuest", json.getData(), apiKey);
+
+        try{
+            String result = post.execute().get();
+
+            Log.e("TAG", "getOrderGuest: " + result);
+
+            return new Gson().fromJson(result, new TypeToken<ArrayList<OrderGuest>>(){}.getType());
+
+        }catch (Exception e){e.printStackTrace();}
+
+        return null;
+
 
     }
 
