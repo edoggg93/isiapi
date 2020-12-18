@@ -13,8 +13,6 @@ public class HttpRequest {
 
     private final String apiKey;
 
-    private MakeHttpPost postRequest;
-
     @Deprecated
     public HttpRequest(String serial, String apiKey) {
         this.apiKey = apiKey;
