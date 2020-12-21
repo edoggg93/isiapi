@@ -527,7 +527,7 @@ public class HttpRequest {
         json.addData("discount_valor", (discount != null) ? discount.getValor() : 0);
         json.addData("discount_type", (discount != null) ? (discount.getType() == Discount.DISCOUNT_TYPE.CASH) ? 0 : 1 : 0);
         json.addData("operator", operator);
-        json.addData("elements", bill);
+        json.addData("elements", new Gson().toJsonTree(bill));
         json.addData("payment_type", paymentType);
 
         Log.e("TAG", "addBill: " + json.getData());
