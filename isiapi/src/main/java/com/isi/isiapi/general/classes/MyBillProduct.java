@@ -25,7 +25,7 @@ public class MyBillProduct extends BillProduct{
         this.id = id;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 }
