@@ -535,6 +535,8 @@ public class HttpRequest {
         try {
             String response = post.execute().get();
 
+            Log.e("TAG", "addBill: " + response);
+
             return response.trim().equals("ok");
 
         } catch (ExecutionException | InterruptedException e) {
