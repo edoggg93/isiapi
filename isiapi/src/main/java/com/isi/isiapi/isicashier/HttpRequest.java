@@ -57,7 +57,7 @@ public class HttpRequest {
 
     }
 
-    public boolean addDepartment(String serial, int dep_number, String dep_code, int product_id){
+    public boolean addDepartment(String serial, int dep_number, String dep_code, Integer product_id){
 
         HttpJson json = new HttpJson();
         json.addData("serial", serial);
