@@ -224,7 +224,7 @@ public class HttpRequest {
 
     }
 
-    private ArrayList<Product> getProducts(String serial){
+    public ArrayList<Product> getProducts(String serial){
 
         HttpJson json = new HttpJson();
         json.addData("serial", serial);
@@ -246,7 +246,7 @@ public class HttpRequest {
 
     }
 
-    private ArrayList<Printer> getPrinters(String serial){
+    public ArrayList<Printer> getPrinters(String serial){
 
         HttpJson json = new HttpJson();
         json.addData("serial", serial);
