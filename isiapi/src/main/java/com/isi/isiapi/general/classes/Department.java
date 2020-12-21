@@ -7,10 +7,10 @@ public class Department{
     @SerializedName("Id")
     public int id;
 
-    @SerializedName("Department")
+    @SerializedName("DepartmentNumber")
     public int department;
 
-    @SerializedName("Code")
+    @SerializedName("DepartmentCode")
     public String code;
 
     @SerializedName("ProductId")
