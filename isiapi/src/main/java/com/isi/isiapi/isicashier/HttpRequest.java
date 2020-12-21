@@ -524,8 +524,8 @@ public class HttpRequest {
 
         HttpJson json = new HttpJson();
         json.addData("serial", serial);
-        json.addData("discount_valor", discount.getValor());
-        json.addData("discount_type", (discount.getType() == Discount.DISCOUNT_TYPE.CASH) ? "0" : "1");
+        json.addData("discount_valor", (discount != null) ? discount.getValor() : 0);
+        json.addData("discount_type", (discount != null) ? (discount.getType() == Discount.DISCOUNT_TYPE.CASH) ? 0 : 1 : 0);
         json.addData("operator", operator);
         json.addData("elements", new Gson().toJson(bill));
         json.addData("payment_type", paymentType);
