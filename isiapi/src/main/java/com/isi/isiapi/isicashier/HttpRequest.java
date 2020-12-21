@@ -373,7 +373,7 @@ public class HttpRequest {
         json.addData("department_id", product.department_id);
         json.addData("barcode", product.barcode);
 
-        MakeHttpPost post = new MakeHttpPost("addProduct", json.getData(), apiKey);
+        MakeHttpPost post = new MakeHttpPost("updateProduct", json.getData(), apiKey);
 
         try {
             String response = post.execute().get();
