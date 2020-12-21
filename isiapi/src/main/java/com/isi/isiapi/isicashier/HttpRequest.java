@@ -94,6 +94,8 @@ public class HttpRequest {
         try {
             String response = post.execute().get();
 
+            Log.e("TAG", "modifyDepartment: " + response);
+
             return response.trim().equals("ok");
 
         } catch (ExecutionException | InterruptedException e) {
