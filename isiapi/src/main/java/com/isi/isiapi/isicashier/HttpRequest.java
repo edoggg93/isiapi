@@ -9,6 +9,7 @@ import com.isi.isiapi.general.classes.BillProduct;
 import com.isi.isiapi.general.classes.Category;
 import com.isi.isiapi.general.classes.Customer;
 import com.isi.isiapi.general.classes.Department;
+import com.isi.isiapi.general.classes.Discount;
 import com.isi.isiapi.general.classes.InformationAboutCommercial;
 import com.isi.isiapi.general.classes.MagaProduct;
 import com.isi.isiapi.general.classes.Operator;
@@ -509,12 +510,12 @@ public class HttpRequest {
 
     }
 
-    public boolean addBill(String serial, String discount_valor, String discount_type, int operator, ArrayList<BillProduct> bill, String paymentType){
+    public boolean addBill(String serial, Discount discount, int operator, ArrayList<BillProduct> bill, String paymentType){
 
         HttpJson json = new HttpJson();
         json.addData("serial", serial);
-        json.addData("discount_valor", discount_valor);
-        json.addData("discount_type", discount_type);
+        json.addData("discount_valor", discount.getValor());
+        json.addData("discount_type", (discount.getType() == Discount.DISCOUNT_TYPE.CASH) ? "0" : "1");
         json.addData("operator", operator);
         json.addData("elements", new Gson().toJson(bill));
         json.addData("payment_type", paymentType);
