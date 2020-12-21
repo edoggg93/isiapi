@@ -89,6 +89,8 @@ public class HttpRequest {
         json.addData("dep_code", dep_code);
         json.addData("product_id", product_id);
 
+        Log.e("TAG", "modifyDepartment: " + json.getData() );
+
         MakeHttpPost post = new MakeHttpPost("modifyDepartment", json.getData(), apiKey);
 
         try {
