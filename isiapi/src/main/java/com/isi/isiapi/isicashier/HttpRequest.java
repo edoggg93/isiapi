@@ -487,6 +487,8 @@ public class HttpRequest {
         try {
             String response = post.execute().get();
 
+            Log.e("TAG", "getInfoAboutMe: " + response);
+
             return new Gson().fromJson(response, InformationAboutCommercial.class);
 
         } catch (ExecutionException | InterruptedException e) {
