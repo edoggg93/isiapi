@@ -530,6 +530,8 @@ public class HttpRequest {
         json.addData("elements", new Gson().toJson(bill));
         json.addData("payment_type", paymentType);
 
+        Log.e("TAG", "addBill: " + json.getData());
+
         MakeHttpPost post = new MakeHttpPost("addBill", json.getData(), apiKey);
 
         try {
