@@ -50,4 +50,8 @@ public class BillProduct {
     public Discount getDiscount() {
         return this.discount;
     }
+
+    public Integer getId() {
+        return id;
+    }
 }
