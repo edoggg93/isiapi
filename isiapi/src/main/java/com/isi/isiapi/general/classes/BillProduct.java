@@ -3,16 +3,16 @@ package com.isi.isiapi.general.classes;
 import com.google.gson.annotations.SerializedName;
 
 public class BillProduct {
-    @SerializedName("quantity")
+    @SerializedName("Quantity")
     private int quantity = 1;
-    @SerializedName("name")
-    private String name;
-    @SerializedName("price")
-    private float price;
-    @SerializedName("discount")
+    @SerializedName("Name")
+    private final String name;
+    @SerializedName("Price")
+    private final float price;
+    @SerializedName("Discount")
     private Discount discount = null;
-    @SerializedName("rep")
-    private int rep;
+    @SerializedName("Rep")
+    private final int rep;
 
     public BillProduct(String name, float price, int rep) {
         this.name = name;

@@ -355,6 +355,9 @@ public class HttpRequest {
 
         try{
             String result = post.execute().get();
+
+            Log.e("TAG", "getOrderGuest: " + result);
+
             return new Gson().fromJson(result, new TypeToken<ArrayList<OrderGuest>>(){}.getType());
 
         }catch (Exception e){e.printStackTrace();}

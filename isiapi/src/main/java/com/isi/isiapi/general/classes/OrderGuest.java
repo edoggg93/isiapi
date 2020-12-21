@@ -20,7 +20,7 @@ public class OrderGuest {
     private final int payment;
     @SerializedName("CommercialId")
     private final String commercial_id;
-    @SerializedName("Elements")
+    @SerializedName("GuestOrderElements")
     private final ArrayList<OrderGuestElement> elements;
 
     public OrderGuest(int id, String timestamp, int account_id, int table_id, int status, int payment, String commercial_id, ArrayList<OrderGuestElement> elements) {
@@ -71,98 +71,3 @@ public class OrderGuest {
     }
 }
 
-class OrderGuestElement{
-    @SerializedName("Id")
-    private final int id;
-    @SerializedName("ProductId")
-    private final int product_id;
-    @SerializedName("Quantity")
-    private final int quantity;
-    @SerializedName("OrderId")
-    private final int order_id;
-    @SerializedName("Name")
-    private final String name;
-    @SerializedName("Price")
-    private final float price;
-    @SerializedName("Notes")
-    private final ArrayList<NotesOrderGuest> notesOrderGuests;
-
-    public OrderGuestElement(int id, int product_id, int quantity, int order_id, String name, float price, ArrayList<NotesOrderGuest> notesOrderGuests) {
-        this.id = id;
-        this.product_id = product_id;
-        this.quantity = quantity;
-        this.order_id = order_id;
-        this.name = name;
-        this.price = price;
-        this.notesOrderGuests = notesOrderGuests;
-    }
-
-    public int getProduct_id() {
-        return product_id;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public int getOrder_id() {
-        return order_id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public ArrayList<NotesOrderGuest> getNotesOrderGuests() {
-        return notesOrderGuests;
-    }
-}
-
-class NotesOrderGuest{
-    @SerializedName("Id")
-    private final int id;
-    @SerializedName("Note_id")
-    private final int note_id;
-    @SerializedName("Element_id")
-    private final int element_id;
-    @SerializedName("Name")
-    private final String name;
-    @SerializedName("Price")
-    private final float price;
-
-    public NotesOrderGuest(int id, int note_id, int element_id, String name, float price) {
-        this.id = id;
-        this.note_id = note_id;
-        this.element_id = element_id;
-        this.name = name;
-        this.price = price;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public int getNote_id() {
-        return note_id;
-    }
-
-    public int getElement_id() {
-        return element_id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-}
