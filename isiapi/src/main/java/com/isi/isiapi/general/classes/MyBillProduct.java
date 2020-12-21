@@ -10,7 +10,7 @@ public class MyBillProduct extends BillProduct{
     private int id;
 
     public MyBillProduct(String name, float price, int rep) {
-        super(name, price, rep);
+        super(0, name, price, rep);
     }
 
     public void setNumber(int barcode) {
