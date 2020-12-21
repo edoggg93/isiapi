@@ -378,6 +378,8 @@ public class HttpRequest {
         try {
             String response = post.execute().get();
 
+            Log.e("TAG", "modifyProduct: " + response);
+
             return response.trim().equals("ok");
 
         } catch (ExecutionException | InterruptedException e) {
@@ -399,6 +401,8 @@ public class HttpRequest {
         try {
             String response = post.execute().get();
 
+            Log.e("TAG", "deleteCustomer: " + response);
+
             return response.trim().equals("ok");
 
         } catch (ExecutionException | InterruptedException e) {
@@ -419,6 +423,8 @@ public class HttpRequest {
 
         try {
             String response = post.execute().get();
+
+            Log.e("TAG", "insertRefreshToken: " + response);
 
             return response.trim().equals("ok");
 
