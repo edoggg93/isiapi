@@ -5,6 +5,8 @@ import com.google.gson.annotations.SerializedName;
 public class BillProduct {
     @SerializedName("Quantity")
     private int quantity = 1;
+    @SerializedName("Id")
+    private final Integer id;
     @SerializedName("Name")
     private final String name;
     @SerializedName("Price")
@@ -14,10 +16,11 @@ public class BillProduct {
     @SerializedName("Rep")
     private final int rep;
 
-    public BillProduct(String name, float price, int rep) {
+    public BillProduct(Integer product_id, String name, float price, int rep) {
         this.name = name;
         this.price = price;
         this.rep = rep;
+        id = product_id;
     }
 
     public int getCode() {
