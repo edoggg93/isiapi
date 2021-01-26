@@ -10,19 +10,19 @@ public class Report {
     @SerializedName("Arrival")
     private final String arrival;
 
-    @SerializedName("Discount_valor")
+    @SerializedName("DiscountValor")
     private final float discount_valor;
 
-    @SerializedName("Discount_type")
+    @SerializedName("DiscountType")
     private final int discount_type;
 
-    @SerializedName("Serial_list_local_id")
+    @SerializedName("SerialListLocalId")
     private final String commercial_id;
 
-    @SerializedName("Account_id")
+    @SerializedName("AccountId")
     private final int account_id;
 
-    @SerializedName("Payment_type")
+    @SerializedName("PaymentType")
     private final String payment_type;
 
     @SerializedName("ElementBills")
