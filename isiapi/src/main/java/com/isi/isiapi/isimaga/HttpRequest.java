@@ -1,5 +1,7 @@
 package com.isi.isiapi.isimaga;
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.isi.isiapi.general.HttpJson;
@@ -40,6 +42,50 @@ public class HttpRequest {
 
         return null;
 
+    }
+
+    public boolean addProduct(String serial, MagaProduct product){
+
+        HttpJson json = new HttpJson();
+        json.addData("serial", serial);
+        json.addData("product", new Gson().toJsonTree(product));
+
+        MakeHttpPost post = new MakeHttpPost("addProduct", json.getData(), apiKey);
+
+        try{
+
+            String response = post.execute().get();
+
+            Log.e("TAG", "addProduct: " + response);
+
+            if(response.trim().equals("ok")){
+                return true;
+            }
+
+        }catch (Exception ignored){}
+
+        return false;
+
+    }
+
+    public boolean modifyPorduct(String serial, MagaProduct product){
+        HttpJson json = new HttpJson();
+        json.addData("serial", serial);
+        json.addData("product", new Gson().toJsonTree(product));
+
+        MakeHttpPost post = new MakeHttpPost("modifyProduct", json.getData(), apiKey);
+
+        try{
+
+            String response = post.execute().get();
+
+            if(response.trim().equals("ok")){
+                return true;
+            }
+
+        }catch (Exception ignored){}
+
+        return false;
     }
 
 }

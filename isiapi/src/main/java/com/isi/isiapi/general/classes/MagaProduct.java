@@ -34,15 +34,23 @@ public class MagaProduct {
     @SerializedName("CommercialLocalId")
     private String commercial_local_id;
 
-    public MagaProduct(String name, String barcode_value, String storage_categories_id, String unity_id, float price, float quantity, Integer forniture_id, int blister_pieces) {
+    @SerializedName("Deadline")
+    public float deadline;
+
+    @SerializedName("Reorder")
+    public int reorder;
+
+    public MagaProduct(String name, String barcode_value, String storage_categories_id, String unity_id, float price, float quantity, int blister_pieces, Integer forniture_id, float deadline, int reorder) {
         this.name = name;
         this.barcode_value = barcode_value;
         this.storage_categories_id = storage_categories_id;
         this.unity_id = unity_id;
         this.price = price;
         this.quantity = quantity;
-        this.forniture_id = forniture_id;
         this.blister_pieces = blister_pieces;
+        this.forniture_id = forniture_id;
+        this.deadline = deadline;
+        this.reorder = reorder;
     }
 }
 
