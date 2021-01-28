@@ -45,8 +45,6 @@ public class HttpRequest {
         try {
             String response = post.execute().get();
 
-            Log.e("TAG", "getOperators: " + response);
-
             return new Gson().fromJson(response, new TypeToken<ArrayList<Operator>>(){}.getType());
 
         } catch (ExecutionException | InterruptedException e) {

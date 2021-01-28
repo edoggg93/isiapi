@@ -36,8 +36,6 @@ public class HttpRequest {
         try {
             String response = post.execute().get();
 
-            Log.e("TAG", "getForniture: " + response);
-
             return new Gson().fromJson(response, new TypeToken<ArrayList<Forniture>>(){}.getType());
 
         } catch (ExecutionException | InterruptedException e) {
