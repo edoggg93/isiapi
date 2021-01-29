@@ -403,7 +403,7 @@ public class HttpRequest {
 
     }
 
-    public void updateDatabaseVersion(String serial, int version){
+    public String updateDatabaseVersion(String serial, int version){
         HttpJson json = new HttpJson();
         json.addData("serial", serial);
         json.addData("version", version);
@@ -411,10 +411,12 @@ public class HttpRequest {
         MakeHttpPost post = new MakeHttpPost("updateDatabaseVersion", json.getData(), apiKey);
 
         try{
-            post.execute().get();
 
+            return post.execute().get();
 
         }catch (Exception e){e.printStackTrace();}
+
+        return "";
 
     }
 
