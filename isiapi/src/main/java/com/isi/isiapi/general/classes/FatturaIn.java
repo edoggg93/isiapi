@@ -4,11 +4,11 @@ import com.google.gson.annotations.SerializedName;
 
 public class FatturaIn {
 
-    @SerializedName("id")
+    @SerializedName("Id")
     public int id;
     @SerializedName("Billid")
     public int billid;
-    @SerializedName("Customer")
+    @SerializedName("Cutomer")
     public String customer;
     @SerializedName("RecoverCode")
     public String recoverCode;
