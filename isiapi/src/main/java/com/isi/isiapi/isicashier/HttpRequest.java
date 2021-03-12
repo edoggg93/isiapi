@@ -549,6 +549,56 @@ public class HttpRequest {
 
     }
 
+    public void getFatture(String serial){
+
+        HttpJson json = new HttpJson();
+        json.addData("serial", serial);
+
+        MakeHttpPost post = new MakeHttpPost("getFatture", json.getData(), apiKey);
+
+        try {
+            String response = post.execute().get();
+
+            Log.e("TAG", "addBill: " + response);
+
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public boolean addFattura(String serial, Discount discount, int operator, ArrayList<BillProduct> bill, String paymentType, String recoverCode, String customer){
+
+        HttpJson json = new HttpJson();
+        json.addData("serial", serial);
+        json.addData("discount_valor", (discount != null) ? discount.getValor() : 0);
+        json.addData("discount_type", (discount != null) ? (discount.getType() == Discount.DISCOUNT_TYPE.CASH) ? 0 : 1 : 0);
+        json.addData("operator", operator);
+        json.addData("elements", new Gson().toJsonTree(bill));
+        json.addData("payment_type", paymentType);
+
+        Log.e("TAG", "addBill: " + json.getData());
+
+        MakeHttpPost post = new MakeHttpPost("addFattura", json.getData(), apiKey);
+
+        try {
+            String response = post.execute().get();
+
+            Log.e("TAG", "addBill: " + response);
+
+            return response.trim().equals("ok");
+
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        json.addData("recover_code", recoverCode);
+        json.addData("customer", customer);
+
+        return false;
+
+    }
+
 }
 
 
