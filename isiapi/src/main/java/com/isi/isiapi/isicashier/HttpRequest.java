@@ -592,6 +592,26 @@ public class HttpRequest {
         return false;
     }
 
+    public boolean updateFatturaStatus(int id, int status, String date){
+        HttpJson json = new HttpJson();
+        json.addData("id", id);
+        json.addData("status", status);
+        json.addData("date", date);
+
+        MakeHttpPost post = new MakeHttpPost("updateFatturaStatus", json.getData(), apiKey);
+
+        try {
+            String response = post.execute().get();
+
+            return response.trim().equals("ok");
+
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
     public boolean addFattura(String serial, Discount discount, int operator, ArrayList<BillProduct> bill, String paymentType, String recoverCode, String customer){
 
         HttpJson json = new HttpJson();
