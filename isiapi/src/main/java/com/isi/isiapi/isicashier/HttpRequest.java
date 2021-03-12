@@ -10,6 +10,7 @@ import com.isi.isiapi.general.classes.Category;
 import com.isi.isiapi.general.classes.Customer;
 import com.isi.isiapi.general.classes.Department;
 import com.isi.isiapi.general.classes.Discount;
+import com.isi.isiapi.general.classes.Fattura;
 import com.isi.isiapi.general.classes.InformationAboutCommercial;
 import com.isi.isiapi.general.classes.MagaProduct;
 import com.isi.isiapi.general.classes.Operator;
@@ -549,7 +550,7 @@ public class HttpRequest {
 
     }
 
-    public void getFatture(String serial){
+    public ArrayList<Fattura> getFatture(String serial){
 
         HttpJson json = new HttpJson();
         json.addData("serial", serial);
@@ -561,9 +562,13 @@ public class HttpRequest {
 
             Log.e("TAG", "addBill: " + response);
 
+            return new Gson().fromJson(response, new TypeToken<ArrayList<Fattura>>(){}.getType());
+
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
+
+        return new ArrayList<>();
 
     }
 
