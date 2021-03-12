@@ -572,6 +572,26 @@ public class HttpRequest {
 
     }
 
+    public boolean deleteFattura(int id){
+        HttpJson json = new HttpJson();
+        json.addData("id", id);
+
+        MakeHttpPost post = new MakeHttpPost("deleteFattura", json.getData(), apiKey);
+
+        try {
+            String response = post.execute().get();
+
+            Log.e("TAG," ,"deleteFattura: " + response);
+
+           return response.trim().equals("ok");
+
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return false;
+    }
+
     public boolean addFattura(String serial, Discount discount, int operator, ArrayList<BillProduct> bill, String paymentType, String recoverCode, String customer){
 
         HttpJson json = new HttpJson();
