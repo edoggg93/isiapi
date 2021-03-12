@@ -576,6 +576,9 @@ public class HttpRequest {
         json.addData("operator", operator);
         json.addData("elements", new Gson().toJsonTree(bill));
         json.addData("payment_type", paymentType);
+        json.addData("recover_code", recoverCode);
+        json.addData("customer", customer);
+
 
         Log.e("TAG", "addBill: " + json.getData());
 
@@ -592,8 +595,6 @@ public class HttpRequest {
             e.printStackTrace();
         }
 
-        json.addData("recover_code", recoverCode);
-        json.addData("customer", customer);
 
         return false;
 
