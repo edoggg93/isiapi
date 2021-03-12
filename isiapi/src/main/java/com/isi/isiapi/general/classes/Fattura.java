@@ -10,14 +10,10 @@ public class Fattura {
     public int id;
     @SerializedName("Arrival")
     public String arrival;
-    @SerializedName("Payed")
+    @SerializedName("PaymentType")
     public boolean payed;
-    @SerializedName("Color")
-    public int color;
-    @SerializedName("Master")
-    public int master;
     @SerializedName("ElementBills")
-    public ArrayList<ElementData> elements;
+    public ArrayList<ElementBill> elements;
     @SerializedName("Fattures")
     public ArrayList<FatturaIn> fattures;
 }
